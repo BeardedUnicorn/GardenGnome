@@ -25,19 +25,20 @@ GardenGnome is a local-first garden planning app for backyard plots, raised beds
 
 ### Prerequisites
 
-- A recent Node.js LTS release with `npm`
+- A recent Node.js LTS release with Corepack available
+- Run `corepack enable` once if `yarn` is not already available on your machine
 - Rust toolchain and the platform dependencies required by Tauri if you want to run the desktop app
 
 ### Install
 
 ```bash
-npm install
+yarn install
 ```
 
 ### Start The Web App
 
 ```bash
-npm run dev
+yarn dev
 ```
 
 This starts the Vite dev server at `http://localhost:5173`.
@@ -45,7 +46,7 @@ This starts the Vite dev server at `http://localhost:5173`.
 ### Start The Desktop App
 
 ```bash
-npm run tauri dev
+yarn tauri dev
 ```
 
 This launches the Tauri shell and connects it to the Vite frontend.
@@ -53,11 +54,11 @@ This launches the Tauri shell and connects it to the Vite frontend.
 ## Common Commands
 
 ```bash
-npm run build       # Type-check and build the web app
-npm run lint        # Run ESLint
-npm test            # Run Vitest once
-npm run test:watch  # Run Vitest in watch mode
-npm run test:e2e    # Run Playwright tests
+yarn build       # Type-check and build the web app
+yarn lint        # Run ESLint
+yarn test        # Run Vitest once
+yarn test:watch  # Run Vitest in watch mode
+yarn test:e2e    # Run Playwright tests
 ```
 
 ## Project Areas
