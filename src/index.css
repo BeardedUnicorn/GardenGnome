@@ -1,0 +1,767 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Manrope:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+:root,
+html[data-theme='garden-day'] {
+  color-scheme: light;
+  font-family: 'Manrope', 'Segoe UI', sans-serif;
+  --app-background:
+    radial-gradient(circle at top left, rgba(232, 214, 166, 0.45), transparent 36%),
+    radial-gradient(circle at top right, rgba(116, 150, 93, 0.22), transparent 32%),
+    linear-gradient(180deg, #f4efe2 0%, #efe8d8 100%);
+  --ink: #243024;
+  --muted: #617161;
+  --line: rgba(72, 86, 60, 0.16);
+  --card: rgba(255, 249, 237, 0.84);
+  --card-strong: rgba(255, 249, 237, 0.94);
+  --surface: rgba(255, 255, 255, 0.58);
+  --surface-strong: rgba(255, 255, 255, 0.82);
+  --surface-inset: rgba(255, 255, 255, 0.42);
+  --surface-inset-strong: rgba(255, 252, 245, 0.62);
+  --surface-outline: rgba(77, 92, 63, 0.18);
+  --surface-highlight: rgba(51, 91, 55, 0.32);
+  --accent: #335b37;
+  --accent-soft: #e3ecd8;
+  --accent-strong: #243024;
+  --accent-contrast: #f8f3e5;
+  --button-primary-start: #324c33;
+  --button-primary-end: #557444;
+  --warn: #c06033;
+  --warn-soft: rgba(192, 96, 51, 0.35);
+  --shadow: 0 18px 50px rgba(66, 58, 44, 0.13);
+  --stage-overlay-top: rgba(255, 255, 255, 0.64);
+  --stage-overlay-bottom: rgba(255, 255, 255, 0.45);
+  --grid-tint: rgba(84, 108, 72, 0.03);
+  --grid-line: rgba(69, 83, 56, 0.13);
+  --svg-label: #192217;
+  --svg-label-muted: rgba(18, 30, 18, 0.76);
+  --svg-label-strong: rgba(18, 30, 18, 0.88);
+  --badge-bg: rgba(24, 35, 21, 0.78);
+  --badge-stroke: rgba(247, 242, 232, 0.36);
+  --badge-text: #f7f2e8;
+}
+
+html[data-theme='orchard-dusk'] {
+  color-scheme: dark;
+  --app-background:
+    radial-gradient(circle at top left, rgba(112, 157, 101, 0.24), transparent 38%),
+    radial-gradient(circle at top right, rgba(207, 169, 90, 0.12), transparent 28%),
+    linear-gradient(180deg, #25352a 0%, #18211b 100%);
+  --ink: #eef4e8;
+  --muted: #b8c6b8;
+  --line: rgba(163, 190, 151, 0.2);
+  --card: rgba(25, 35, 28, 0.84);
+  --card-strong: rgba(22, 31, 25, 0.92);
+  --surface: rgba(42, 57, 45, 0.68);
+  --surface-strong: rgba(34, 47, 38, 0.9);
+  --surface-inset: rgba(28, 40, 31, 0.78);
+  --surface-inset-strong: rgba(31, 43, 34, 0.84);
+  --surface-outline: rgba(156, 184, 144, 0.24);
+  --surface-highlight: rgba(156, 205, 126, 0.4);
+  --accent: #9cc87a;
+  --accent-soft: #243728;
+  --accent-strong: #9cc87a;
+  --accent-contrast: #152016;
+  --button-primary-start: #6f9355;
+  --button-primary-end: #a5ca80;
+  --warn: #efae82;
+  --warn-soft: rgba(239, 174, 130, 0.34);
+  --shadow: 0 18px 50px rgba(6, 12, 8, 0.34);
+  --stage-overlay-top: rgba(30, 41, 33, 0.88);
+  --stage-overlay-bottom: rgba(24, 34, 27, 0.9);
+  --grid-tint: rgba(168, 204, 145, 0.06);
+  --grid-line: rgba(168, 204, 145, 0.18);
+  --svg-label: #f1f7eb;
+  --svg-label-muted: rgba(237, 244, 231, 0.82);
+  --svg-label-strong: rgba(241, 247, 235, 0.94);
+  --badge-bg: rgba(241, 247, 235, 0.14);
+  --badge-stroke: rgba(241, 247, 235, 0.26);
+  --badge-text: #f1f7eb;
+}
+
+html[data-theme='terracotta-noon'] {
+  color-scheme: light;
+  --app-background:
+    radial-gradient(circle at top left, rgba(226, 151, 96, 0.28), transparent 34%),
+    radial-gradient(circle at top right, rgba(212, 192, 123, 0.22), transparent 30%),
+    linear-gradient(180deg, #fbefe4 0%, #f3dfd0 100%);
+  --ink: #422a20;
+  --muted: #7b5d52;
+  --line: rgba(120, 73, 52, 0.16);
+  --card: rgba(255, 247, 239, 0.86);
+  --card-strong: rgba(255, 250, 244, 0.94);
+  --surface: rgba(255, 250, 246, 0.62);
+  --surface-strong: rgba(255, 253, 250, 0.9);
+  --surface-inset: rgba(255, 244, 235, 0.68);
+  --surface-inset-strong: rgba(255, 247, 241, 0.84);
+  --surface-outline: rgba(143, 94, 69, 0.2);
+  --surface-highlight: rgba(159, 79, 47, 0.34);
+  --accent: #9f4f2f;
+  --accent-soft: #f4ddcd;
+  --accent-strong: #864127;
+  --accent-contrast: #fff3ea;
+  --button-primary-start: #944b2b;
+  --button-primary-end: #c97248;
+  --warn: #b3522e;
+  --warn-soft: rgba(179, 82, 46, 0.28);
+  --shadow: 0 18px 50px rgba(96, 63, 44, 0.16);
+  --stage-overlay-top: rgba(255, 251, 247, 0.82);
+  --stage-overlay-bottom: rgba(255, 245, 237, 0.72);
+  --grid-tint: rgba(170, 102, 69, 0.035);
+  --grid-line: rgba(143, 87, 60, 0.16);
+  --svg-label: #382117;
+  --svg-label-muted: rgba(66, 42, 32, 0.76);
+  --svg-label-strong: rgba(66, 42, 32, 0.9);
+  --badge-bg: rgba(90, 47, 30, 0.78);
+  --badge-stroke: rgba(255, 243, 234, 0.42);
+  --badge-text: #fff3ea;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--app-background);
+  color: var(--ink);
+  transition: background 180ms ease, color 180ms ease;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+.loading-screen,
+.app-shell {
+  min-height: 100vh;
+}
+
+.loading-screen {
+  display: grid;
+  place-items: center;
+  padding: 32px;
+}
+
+.loading-card,
+.card {
+  backdrop-filter: blur(18px);
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 28px;
+  box-shadow: var(--shadow);
+}
+
+.loading-card {
+  max-width: 560px;
+  padding: 32px;
+}
+
+.loading-card--error {
+  border-color: var(--warn-soft);
+}
+
+.app-shell {
+  padding: 28px;
+}
+
+.app-header {
+  align-items: end;
+  display: flex;
+  gap: 24px;
+  justify-content: space-between;
+  margin-bottom: 28px;
+}
+
+.app-header h1,
+.card-heading h2,
+.planner-toolbar h2,
+.loading-card h2 {
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: clamp(2rem, 3vw, 3.3rem);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 0.94;
+  margin: 0;
+}
+
+.app-nav {
+  display: flex;
+  gap: 10px;
+}
+
+.nav-pill,
+.button,
+.segmented-control__button,
+.tool-card {
+  border: 1px solid transparent;
+  border-radius: 999px;
+  text-decoration: none;
+  transition: transform 140ms ease, background-color 140ms ease, border-color 140ms ease;
+}
+
+.nav-pill {
+  background: var(--surface-inset-strong);
+  color: var(--ink);
+  padding: 12px 18px;
+}
+
+.nav-pill--active {
+  background: var(--accent-strong);
+  color: var(--accent-contrast);
+}
+
+.app-main {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.dashboard-grid,
+.planner-grid-layout {
+  display: grid;
+  gap: 24px;
+}
+
+.dashboard-grid {
+  grid-template-columns: minmax(340px, 420px) minmax(0, 1fr);
+}
+
+.planner-grid-layout {
+  grid-template-columns: 320px minmax(0, 1fr) 320px;
+  min-height: 72vh;
+}
+
+.settings-layout {
+  display: grid;
+  gap: 24px;
+  max-width: 760px;
+}
+
+.plant-library-page__panel {
+  min-height: 72vh;
+}
+
+.card,
+.planner-toolbar {
+  padding: 24px;
+}
+
+.card-heading {
+  margin-bottom: 18px;
+}
+
+.card-heading h2,
+.card-heading h3 {
+  font-family: 'Fraunces', Georgia, serif;
+  letter-spacing: -0.03em;
+  line-height: 1;
+  margin: 0;
+}
+
+.card-heading h3 {
+  font-size: 1.5rem;
+}
+
+.card-heading p,
+.plan-card p,
+.plant-card p,
+.empty-state p,
+.inline-note,
+.issue-card span {
+  color: var(--muted);
+}
+
+.eyebrow {
+  color: var(--accent);
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  margin: 0 0 10px;
+  text-transform: uppercase;
+}
+
+.form-stack {
+  display: grid;
+  gap: 14px;
+}
+
+.field-grid,
+.button-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.field-grid > * {
+  flex: 1 1 140px;
+}
+
+.field {
+  display: grid;
+  gap: 8px;
+}
+
+.field span {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.field input,
+.field select,
+.field textarea {
+  background: var(--surface-strong);
+  border: 1px solid var(--surface-outline);
+  border-radius: 18px;
+  color: var(--ink);
+  min-height: 48px;
+  padding: 12px 14px;
+}
+
+.field textarea {
+  min-height: 110px;
+  resize: vertical;
+}
+
+.field--checkbox {
+  align-items: center;
+  grid-template-columns: auto 1fr;
+}
+
+.field--checkbox input {
+  min-height: 18px;
+}
+
+.button {
+  background: var(--surface);
+  color: var(--ink);
+  min-height: 44px;
+  padding: 11px 18px;
+}
+
+.button:hover,
+.nav-pill:hover,
+.tool-card:hover,
+.segmented-control__button:hover,
+.text-button:hover {
+  transform: translateY(-1px);
+}
+
+.button--primary {
+  background: linear-gradient(
+    135deg,
+    var(--button-primary-start) 0%,
+    var(--button-primary-end) 100%
+  );
+  color: var(--accent-contrast);
+}
+
+.button--ghost {
+  background: var(--surface-inset);
+  border-color: var(--surface-outline);
+}
+
+.button-row--tight .button {
+  min-height: 40px;
+  padding: 10px 14px;
+}
+
+.text-button {
+  background: none;
+  border: 0;
+  color: var(--accent);
+  padding: 0;
+}
+
+.projects-card,
+.planner-sidebar,
+.planner-inspector,
+.planner-canvas {
+  min-height: 100%;
+}
+
+.plan-grid,
+.plant-list,
+.issue-list {
+  display: grid;
+  gap: 14px;
+}
+
+.season-family-grid,
+.season-family-list {
+  display: grid;
+  gap: 16px;
+}
+
+.plan-card,
+.plant-card,
+.issue-card,
+.summary-chip,
+.tool-card,
+.plant-editor {
+  background: var(--surface);
+  border: 1px solid var(--surface-outline);
+  border-radius: 22px;
+  padding: 16px;
+}
+
+.issue-card {
+  display: grid;
+  gap: 6px;
+}
+
+.issue-card__reasons {
+  display: grid;
+  gap: 4px;
+}
+
+.issue-card__reasons .inline-note {
+  margin: 0;
+}
+
+.season-family-card {
+  background: var(--surface-inset);
+  border: 1px solid var(--surface-outline);
+  border-radius: 24px;
+  padding: 18px;
+}
+
+.plan-card h3,
+.plant-card h4 {
+  margin: 0 0 8px;
+}
+
+.plan-card--latest {
+  border-color: var(--surface-highlight);
+  box-shadow: inset 0 0 0 1px var(--line);
+}
+
+.plan-meta,
+.plan-footprint,
+.plant-card__meta {
+  font-size: 0.88rem;
+  margin: 0 0 6px;
+}
+
+.empty-state {
+  border: 1px dashed var(--line);
+  border-radius: 24px;
+  padding: 26px;
+}
+
+.planner-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.planner-toolbar {
+  display: grid;
+  gap: 18px;
+}
+
+.planner-season-panel,
+.planner-season-workbench,
+.planner-journal-panel,
+.planner-season-panel__timeline,
+.planner-season-panel__comparison,
+.planner-season-panel__guidance,
+.planner-season-workbench__summary,
+.planner-season-workbench__list,
+.planner-journal-panel__entries,
+.planner-journal-panel__form {
+  display: grid;
+  gap: 14px;
+}
+
+.planner-season-panel__timeline {
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+}
+
+.planner-season-panel .summary-chip strong,
+.planner-season-workbench .summary-chip strong,
+.planner-season-workbench .issue-card strong,
+.planner-season-panel .issue-card strong {
+  display: block;
+  margin-bottom: 6px;
+}
+
+.planner-season-workbench__summary {
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+}
+
+.planner-season-workbench__form-actions,
+.planner-season-workbench__controls,
+.planner-season-workbench__groups {
+  align-items: start;
+}
+
+.planner-season-workbench__group {
+  display: grid;
+  gap: 12px;
+}
+
+.planner-season-workbench__group h4 {
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: 1.1rem;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+.planner-season-workbench__item-header {
+  align-items: flex-start;
+  display: flex;
+  gap: 16px;
+  justify-content: space-between;
+}
+
+.planner-season-workbench__meta {
+  color: var(--muted);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 6px;
+}
+
+.planner-season-panel__guidance h4 {
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: 1.2rem;
+  letter-spacing: -0.03em;
+  margin: 0;
+}
+
+.planner-journal-panel__entry-header {
+  align-items: flex-start;
+  display: flex;
+  gap: 16px;
+  justify-content: space-between;
+}
+
+.planner-journal-panel__entry-date {
+  font-size: 0.88rem;
+  margin: 6px 0 0;
+}
+
+.planner-toolbar__meta {
+  align-items: center;
+  display: flex;
+  gap: 16px;
+  justify-content: space-between;
+}
+
+.planner-stage {
+  background:
+    linear-gradient(180deg, var(--stage-overlay-top), var(--stage-overlay-bottom)),
+    repeating-linear-gradient(
+      90deg,
+      var(--grid-tint),
+      var(--grid-tint) 1px,
+      transparent 1px,
+      transparent 42px
+    ),
+    repeating-linear-gradient(
+      180deg,
+      var(--grid-tint),
+      var(--grid-tint) 1px,
+      transparent 1px,
+      transparent 42px
+    );
+  border: 1px solid var(--surface-outline);
+  border-radius: 22px;
+  height: 100%;
+  min-height: 620px;
+  overflow: hidden;
+  position: relative;
+}
+
+.planner-stage--pan {
+  cursor: grab;
+}
+
+.planner-stage--drop-target {
+  border-color: var(--surface-highlight);
+  box-shadow: inset 0 0 0 2px color-mix(in srgb, var(--accent) 32%, transparent);
+}
+
+.planner-surface {
+  left: 0;
+  position: absolute;
+  top: 0;
+  transform-origin: top left;
+}
+
+.grid-line {
+  stroke: var(--grid-line);
+  stroke-width: 1;
+}
+
+.zone-label,
+.plant-label {
+  fill: var(--svg-label);
+  font-family: 'Manrope', 'Segoe UI', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.measurement-label {
+  fill: var(--svg-label-muted);
+  font-family: 'Manrope', 'Segoe UI', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+}
+
+.sun-band {
+  pointer-events: none;
+}
+
+.irrigation-overlay {
+  pointer-events: none;
+}
+
+.note-overlay {
+  pointer-events: none;
+}
+
+.irrigation-badge {
+  fill: var(--badge-bg);
+  stroke: var(--badge-stroke);
+  stroke-width: 1.25;
+}
+
+.irrigation-label {
+  fill: var(--badge-text);
+  font-family: 'Manrope', 'Segoe UI', sans-serif;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+}
+
+.irrigation-label--secondary {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.note-label {
+  fill: #f8f5ef;
+  font-family: 'Manrope', 'Segoe UI', sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
+.note-label--compact {
+  font-size: 9px;
+}
+
+.sun-band-label {
+  fill: var(--svg-label-muted);
+  font-family: 'Manrope', 'Segoe UI', sans-serif;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.measurement-label--plan {
+  fill: var(--svg-label-strong);
+}
+
+.segmented-control {
+  display: grid;
+  gap: 8px;
+  grid-template-columns: repeat(3, 1fr);
+  margin-bottom: 18px;
+}
+
+.segmented-control__button {
+  background: var(--surface-inset);
+  min-height: 42px;
+}
+
+.segmented-control__button--active {
+  background: var(--accent-strong);
+  color: var(--accent-contrast);
+}
+
+.sidebar-section {
+  display: grid;
+  gap: 16px;
+}
+
+.sidebar-section--scroll {
+  max-height: 78vh;
+  overflow: auto;
+  padding-right: 6px;
+}
+
+.tool-grid {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.tool-card {
+  align-items: start;
+  display: grid;
+  gap: 6px;
+  min-height: 96px;
+  text-align: left;
+}
+
+.tool-card--active {
+  border-color: var(--surface-highlight);
+  box-shadow: inset 0 0 0 1px var(--line);
+}
+
+.plant-editor {
+  display: grid;
+  gap: 12px;
+}
+
+.summary-chip {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.planner-loading {
+  display: grid;
+  min-height: 50vh;
+  place-items: center;
+}
+
+@media (max-width: 1280px) {
+  .dashboard-grid,
+  .planner-grid-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 720px) {
+  .app-shell {
+    padding: 18px;
+  }
+
+  .app-header {
+    align-items: start;
+    flex-direction: column;
+  }
+
+  .app-nav {
+    flex-wrap: wrap;
+  }
+}
