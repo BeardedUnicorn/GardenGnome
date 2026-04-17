@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "author": "Mike Herold",
   "license": "MIT",
-  "packageManager": "yarn@4.13.0",
+  "packageManager": "yarn@4.14.1",
   "type": "module",
   "scripts": {
     "dev": "vite",
